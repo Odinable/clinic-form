@@ -1,16 +1,20 @@
 "use client"
 
-// components/SubmitButton.tsx
-import React from "react";
+import React, { MouseEventHandler } from 'react';
 
 interface SubmitButtonProps {
-  label: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
-const SubmitButton: React.FC<SubmitButtonProps> = ({ label }) => (
-  <button type='submit' className='text-white bg-black rounded-lg w-full py-3 mt-6'>
-    {label}
-  </button>
+const SubmitButton: React.FC<SubmitButtonProps> = ({ onClick }) => (
+  <div>
+    <button
+      onClick={onClick}
+      className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none w-full"
+    >
+      Submit
+    </button>
+  </div>
 );
 
 export default SubmitButton;

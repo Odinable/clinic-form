@@ -1,27 +1,25 @@
 "use client"
 
 import React, { ChangeEvent } from 'react';
+import ReactDatePicker from 'react-datepicker';
 
-interface TextInputProps {
+interface DateInputProps {
   label: string;
   name: string;
   id: string;
-  placeholder: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  type?: string;
 }
 
-const TextInput: React.FC<TextInputProps> = ({ label, name, id, placeholder, value, onChange, type = 'text' }) => (
+const DateInput: React.FC<DateInputProps> = ({ label, name, id, value, onChange }) => (
   <div className="mb-5">
     <label htmlFor={id} className="mb-3 block text-base font-medium text-[#07074D]">
       {label}
     </label>
     <input
-      type={type}
+      type="date"
       name={name}
       id={id}
-      placeholder={placeholder}
       value={value}
       onChange={onChange}
       className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
@@ -29,4 +27,4 @@ const TextInput: React.FC<TextInputProps> = ({ label, name, id, placeholder, val
   </div>
 );
 
-export default TextInput;
+export default DateInput;
